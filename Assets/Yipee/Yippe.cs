@@ -26,7 +26,7 @@
 
     void Start()
     {
-        surface.GetComponent<KMSelectable>().OnInteract += delegate () { Debug.Log("A"); StartCoroutine(Solve()); Debug.Log("B"); return false; };
+        surface.GetComponent<KMSelectable>().OnInteract += delegate () { if (!ModuleSolved) StartCoroutine(Solve()); return false; };
         DateTime currentDate = DateTime.Now;
         if (currentDate.Month == 1 && currentDate.Day == 23)
         {
@@ -41,10 +41,8 @@
     {
         surface.GetComponent<Renderer>().material = materials[materialIndex + 1];
         Logging("YIPEE");
-        Debug.Log("1");
         Audio.PlaySoundAtTransform(solveSound.name, transform);
         yield return new WaitForSeconds(solveSound.length);
-        Debug.Log("2");
         GetComponent<KMBombModule>().HandlePass();
         ModuleSolved = true;
     }
@@ -56,7 +54,6 @@
     private readonly string TwitchHelpMessage = @"Use !{0} to do something.";
     #pragma warning restore 414
     IEnumerator ProcessTwitchCommand (string Command) {
-        surface.GetComponent<KMSelectable>().OnInteract();
         yield return null;
     }
 
