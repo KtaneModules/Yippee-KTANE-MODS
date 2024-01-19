@@ -8,7 +8,7 @@
     using Rnd = UnityEngine.Random;
     using UnityEngine.UI;
 
-    public class Yippe : MonoBehaviour {
+    public class Yippee : MonoBehaviour {
     public KMBombInfo Bomb;
     public KMAudio Audio;
     public Material[] materials; //normal, birthday, normal solve, birthday solve
