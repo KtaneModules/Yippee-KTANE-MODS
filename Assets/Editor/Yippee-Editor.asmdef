@@ -1,0 +1,10 @@
+{
+  "name": "Yippee-Editor",
+  "references": [
+    "Yippee"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}

@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: 
-  title: 
-  author: 
-  description: 
-  version: 
+  id: Yippee
+  title: Yippee
+  author: Hawker
+  description: Click the module to solve
+  version: 1.0
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 120f338f5b437ed4bb423d5709b29c22, type: 3}
