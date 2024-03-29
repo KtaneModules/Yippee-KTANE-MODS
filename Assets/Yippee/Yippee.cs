@@ -48,16 +48,23 @@
     }
     private void Logging(string s)
     {
-        Debug.Log($"[Yipee #{ModuleId}] {s}");
+        Debug.Log($"[Yippee #{ModuleId}] {s}");
     }
     #pragma warning disable 414
-    private readonly string TwitchHelpMessage = @"Use !{0} to do something.";
+    private readonly string TwitchHelpMessage = @"!{0} yippee [Clicks the module]";
     #pragma warning restore 414
     IEnumerator ProcessTwitchCommand (string Command) {
-        yield return null;
+        if (Command.EqualsIgnoreCase("yippee"))
+        {
+            yield return null;
+            yield return "solve";
+            surface.GetComponent<KMSelectable>().OnInteract();
+        }
     }
 
     IEnumerator TwitchHandleForcedSolve () {
-        yield return null;
+        if (!surface.GetComponent<Renderer>().material.name.Contains("yipee solve") && !surface.GetComponent<Renderer>().material.name.Contains("birth yipee solve"))
+            surface.GetComponent<KMSelectable>().OnInteract();
+        while (!ModuleSolved) yield return true;
     }
     }
