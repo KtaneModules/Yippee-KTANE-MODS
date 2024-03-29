@@ -40,7 +40,7 @@
     IEnumerator Solve()
     {
         surface.GetComponent<Renderer>().material = materials[materialIndex + 1];
-        Logging("YIPEE");
+        Logging("YIPPEE");
         Audio.PlaySoundAtTransform(solveSound.name, transform);
         yield return new WaitForSeconds(solveSound.length);
         GetComponent<KMBombModule>().HandlePass();
